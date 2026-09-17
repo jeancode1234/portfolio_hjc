@@ -8,6 +8,20 @@ updates:
     labels:
       - "dependencies"
       - "security"
+      - "automated"
+    reviewers:
+      - "https://github.com/jeancode1234"
     commit-message:
       prefix: "chore"
       include: "scope"
+    allow:
+      - dependency-type: "direct"
+    groups:
+      production-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "@nuxtjs/*"
+          - "nuxt"
+      dev-dependencies:
+        dependency-type: "development"
